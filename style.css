@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #222;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.section .scroll {
+    display: flex; /* 내자식을 옆으로 정렬함 */
+    position: absolute;
+    left: 94px;top: 0;
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+
+.section .scroll div {
+    background-color: #fff;;
+    font-family: 'Poppins', sans-serif;
+    font-size: 64px;
+    white-space: nowrap; /* //글자를 아래로 떨어지게 하지 않음 */
+    font-weight: 800;
+    animation: animate1 40s linear infinite ;
+}
+.section .scroll div:nth-child(2){ /* ntd-child : div 중 2째를 부르는 방법 */
+    animation: animate2 40s linear infinite ;
+    animation-delay: -20s;
+}
+
+@keyframes animate1{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
+}
+
+@keyframes animate2{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-200%);}
+}
+ 
+/* .section2{
+    display: none;
+    padding-top: 30%;
+    position: relative;
+    height: 100vh;
+}
+.section2 .rotate{
+    background-color: red;
+    width: 300px; height: 100px;
+    text-align: center;
+    line-height: 100px;
+    position: absolute; left: 50%; top: 50%;
+    transform: rotate(0deg);
+    transform-origin: left top; /* 아무것도 안 적으면 center 기준 회전점의 기준을 잡아줌
+}  */
